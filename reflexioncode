@@ -1,0 +1,18 @@
+import io
+import random
+
+Counter = 0
+
+with io.open("reflexion.txt", 'r', encoding ='utf8') as f:
+    text = f.read()
+    Colist = text.split("\n")
+
+    Keys = random.sample(range(0, 81), 3)
+    for i in Colist:
+        if i:
+            if Counter == Keys[0] or Counter == Keys[1] or Counter == Keys[2]:
+                print(i)
+                print("\n")
+            Counter += 1
+print("Number of lines:")
+print(Counter)
